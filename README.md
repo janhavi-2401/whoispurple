@@ -30,3 +30,11 @@ If you’re here accidentally — same.
 Still human.  
 Still trying to be a dev.  
 Progress > perfection.
+
+## GitHub project hygiene
+This repo now includes a cleaner GitHub workflow setup (serious structure, unserious energy, hehe):
+- Structured bug + feature issue forms
+- A PR template that asks for context, validation, and risk notes
+- CODEOWNERS defaults for clear review ownership
+- Dependabot updates for GitHub Actions
+- PR hygiene workflow with auto-labeling + description quality guard

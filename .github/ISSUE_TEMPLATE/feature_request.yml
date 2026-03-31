@@ -1,0 +1,35 @@
+name: "Feature request"
+description: Suggest an improvement or new capability
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Big ideas welcome.
+        Tell us what hurts today and what "nice" looks like tomorrow (hehe).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem are you trying to solve?
+      placeholder: "It is hard to..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe your preferred solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you've evaluated
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Who benefits and how do we measure success?
+      placeholder: "Success metric: ..."
