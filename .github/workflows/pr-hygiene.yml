@@ -1,0 +1,31 @@
+name: PR Hygiene
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label pull request by changed files
+        uses: actions/labeler@v5
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+
+  checklist-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure PR has a meaningful description
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const body = context.payload.pull_request.body || '';
+            const tooShort = body.replace(/\s+/g, ' ').trim().length < 60;
+            if (tooShort) {
+              core.setFailed('PR description is too short. Please fill out the PR template with context and validation details.');
+            }

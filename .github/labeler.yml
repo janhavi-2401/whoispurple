@@ -1,0 +1,7 @@
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ['README.md', '**/*.md']
+
+github-config:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/**']
